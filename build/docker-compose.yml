@@ -1,0 +1,38 @@
+version: '2'
+services:
+  # elasticsearch_head:
+    # image: salgat/elasticsearch-head
+    # ports:
+      # - "9100:9100"
+    # links:
+      # - elasticsearch
+  # elasticsearch:
+    # image: salgat/elk-cors
+    # expose:
+      # - "9200"
+    # ports:
+      # - "9200:9200"
+      # - "5601:5601"
+    # environment:
+      # - SERVICE_9200_NAME= primary_elasticsearch
+      # - SERVICE_5601_NAME= primary_kibana
+      # - ELASTICSEARCH_URL=http://elasticsearch:9200
+  webapi:
+    image: webapi:v1.0
+    ports:
+      - "5000:5000"
+    environment:
+      - SERVICE_5000_NAME= primary_webapi
+      
+  #
+  # Service Discovery - Registrator
+  #
+  # registrator:
+    # command: -ip=$DOCKER_IP consul://consul:8500
+    # image: gliderlabs/registrator:latest
+    # links:
+    # - consul
+    # environment:
+    # - SERVICE_8500_NAME= consul
+    # volumes:
+    # - "/var/run/docker.sock:/tmp/docker.sock"
