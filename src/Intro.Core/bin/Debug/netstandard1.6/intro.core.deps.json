@@ -7,12 +7,12 @@
   "targets": {
     ".NETStandard,Version=v1.6": {},
     ".NETStandard,Version=v1.6/": {
-      "intro.core/1.0.0": {
+      "Intro.Core/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "1.6.1"
         },
         "runtime": {
-          "intro.core.dll": {}
+          "Intro.Core.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
@@ -755,7 +755,7 @@
     }
   },
   "libraries": {
-    "intro.core/1.0.0": {
+    "Intro.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
