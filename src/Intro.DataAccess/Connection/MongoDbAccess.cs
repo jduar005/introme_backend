@@ -29,7 +29,7 @@ namespace Intro.DataAccess.Connection
         private static MongoServer GetMongoServer(MongoUrl mongoUrl)
         {
             var client = new MongoClient(mongoUrl);
-            var server = client.GetServer();
+            var server = client.GetServer(); // tODO: update to new mongo driver usage
 
             return server;
         }

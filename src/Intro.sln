@@ -19,6 +19,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Intro.Domain", "Intro.Domai
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Intro.IntegrationTests", "Intro.IntegrationTests\Intro.IntegrationTests.xproj", "{128F58C0-E1ED-4DD0-99BE-1677A98695D6}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Intro.Utility", "Intro.Utility\Intro.Utility.xproj", "{16E48FCC-A600-445D-A5C2-7E67022CAE57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{128F58C0-E1ED-4DD0-99BE-1677A98695D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{128F58C0-E1ED-4DD0-99BE-1677A98695D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{128F58C0-E1ED-4DD0-99BE-1677A98695D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16E48FCC-A600-445D-A5C2-7E67022CAE57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16E48FCC-A600-445D-A5C2-7E67022CAE57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16E48FCC-A600-445D-A5C2-7E67022CAE57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16E48FCC-A600-445D-A5C2-7E67022CAE57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

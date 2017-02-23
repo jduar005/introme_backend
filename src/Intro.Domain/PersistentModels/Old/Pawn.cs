@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Intro.Domain.PersistentModels
+namespace Intro.Domain.PersistentModels.Old
 {
-    public class Pawn : Exchange
+    public class Pawn : Entity
     {
         // TODO: will customers exist as entities in the database?
         public string CustomerName { get; set; }

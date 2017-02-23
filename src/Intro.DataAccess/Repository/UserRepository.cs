@@ -14,7 +14,7 @@ namespace Intro.DataAccess.Repository
 
         public User GetByUserName(string userName)
         {
-            return this.GetAll().FirstOrDefault(u => u.UserName == userName);
+            return this.GetAll().FirstOrDefault(u => u.EmailAddress == userName);
         }
 
         public IQueryable<User> GetAllByIds(IEnumerable<string> userIds)

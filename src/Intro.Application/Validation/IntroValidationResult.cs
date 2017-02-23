@@ -9,6 +9,10 @@ namespace Intro.Application.Validation
     {
         private readonly Dictionary<string, List<string>> _errors;
 
+        public bool IsValid => !this._errors.Any();
+
+        public IDictionary<string, IEnumerable<string>> Errors => this._errors.ToDictionary(error => error.Key, error => (IEnumerable<string>)error.Value);
+
         public IntroValidationResult()
         {
             this._errors = new Dictionary<string, List<string>>();
@@ -18,27 +22,6 @@ namespace Intro.Application.Validation
             : this()
         {
             this.AddError(name, message);
-        }
-
-        public IntroValidationResult(ValidationResult validationResult)
-        {
-            this.AddErrors(validationResult.Errors);
-        }
-
-        public bool IsValid
-        {
-            get
-            {
-                return !this._errors.Any();
-            }
-        }
-
-        public IDictionary<string, IEnumerable<string>> Errors
-        {
-            get
-            {
-                return this._errors.ToDictionary(error => error.Key, error => (IEnumerable<string>)error.Value);
-            }
         }
 
         public IEnumerable<IntroError> AsEnumerable()
@@ -57,7 +40,7 @@ namespace Intro.Application.Validation
             return this;
         }
 
-        public void AddError(string name, string message)
+        public IValidationResult AddError(string name, string message)
         {
             if (!this._errors.ContainsKey(name))
             {
@@ -67,6 +50,8 @@ namespace Intro.Application.Validation
             {
                 this._errors[name].Add(message);
             }
+
+            return this;
         }
     }
 }

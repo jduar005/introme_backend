@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Intro.Domain.PersistentModels
+namespace Intro.Domain.PersistentModels.Old
 {
     public class Item : Entity
     {

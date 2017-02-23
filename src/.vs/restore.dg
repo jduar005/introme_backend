@@ -1,1 +1,8 @@
 #:C:\Projects\intro\src\Intro.Web\Intro.Web.xproj
+C:\Projects\intro\src\Intro.Web\Intro.Web.xproj|C:\Projects\intro\src\Intro.Domain\Intro.Domain.xproj
+C:\Projects\intro\src\Intro.Web\Intro.Web.xproj|C:\Projects\intro\src\Intro.Application\Intro.Application.xproj
+C:\Projects\intro\src\Intro.Web\Intro.Web.xproj|C:\Projects\intro\src\Intro.DataAccess\Intro.DataAccess.xproj
+C:\Projects\intro\src\Intro.Application\Intro.Application.xproj|C:\Projects\intro\src\Intro.DataAccess\Intro.DataAccess.xproj
+C:\Projects\intro\src\Intro.Application\Intro.Application.xproj|C:\Projects\intro\src\Intro.Domain\Intro.Domain.xproj
+C:\Projects\intro\src\Intro.DataAccess\Intro.DataAccess.xproj|C:\Projects\intro\src\Intro.Domain\Intro.Domain.xproj
+C:\Projects\intro\src\Intro.DataAccess\Intro.DataAccess.xproj|C:\Projects\intro\src\Intro.Utility\Intro.Utility.xproj

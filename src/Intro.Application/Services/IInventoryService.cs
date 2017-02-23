@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Intro.Domain.PersistentModels;
+using Intro.Domain.PersistentModels.Old;
 
 namespace Intro.Application.Services
 {

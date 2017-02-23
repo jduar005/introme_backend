@@ -7,9 +7,9 @@ namespace Intro.Modules
     {
         public IndexModule()
         {
-            Get["/"] = parameters => new RedirectResponse("/index");
+            Get("/", parameters => new RedirectResponse("/index"));
 
-            Get["/index"] = parameters => View["index"];
+            Get("/index", parameters => View["index"]);
         }
     }
 }

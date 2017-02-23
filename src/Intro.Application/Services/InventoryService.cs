@@ -7,6 +7,8 @@ using Intro.Domain.ViewModels;
 using Intro.Utility.DotNetWrappers;
 using System.Collections.Generic;
 
+using Intro.Domain.PersistentModels.Old;
+
 namespace Intro.Application.Services
 {
     // TODO: config mongo db so that you don't always get all exchanges with item

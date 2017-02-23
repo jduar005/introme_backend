@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+
+using MongoDB.Driver;
+
 using Intro.Domain.PersistentModels;
 
 namespace Intro.DataAccess.Repository
@@ -11,6 +14,8 @@ namespace Intro.DataAccess.Repository
         TEntity GetById(TKey id);
 
         IQueryable<TEntity> GetAll();
+
+        GeoNearResult<TEntity> GeoNear(GeoNearArgs nearArgs);
 
         TEntity Add(TEntity entity);
         void Add(IEnumerable<TEntity> entities);

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Intro.Domain.PersistentModels
+namespace Intro.Domain.PersistentModels.Old
 {
     // TODO: how do we represent transactions that don't involve any money?
     public class Transaction
@@ -16,7 +16,7 @@ namespace Intro.Domain.PersistentModels
         // TODO: make sure Mongo doesn't store this
         public Decimal GetDollarValue()
         {
-            return Decimal.Parse(Amount.ToString(CultureInfo.InvariantCulture));
+            return Decimal.Parse(this.Amount.ToString(CultureInfo.InvariantCulture));
         }
     }
 }

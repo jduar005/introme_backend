@@ -11,46 +11,69 @@ using MongoDB.Driver.Linq;
 
 namespace Intro.DataAccess.Connection
 {
+    public interface ILogger
+    {
+        void Debug(string s);
+    }
+
     public class MongoRepository<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : IEntity<TKey>
     {
-        protected internal MongoCollection<TEntity> Collection;
+        private readonly ILogger _log;
+        private readonly MongoCollection<TEntity> collection;
 
-        public MongoRepository() : this(new MongoConnectionStringProvider())
+        public MongoRepository() 
+            : this(new MongoConnectionStringProvider(), null)
         {
         }
 
-        public MongoRepository(IConnectionStringProvider connectionStringProvider)
+        public MongoRepository(IConnectionStringProvider connectionStringProvider, ILogger logger = null)
         {
-            this.Collection = new MongoDbAccess(connectionStringProvider).GetCollection<TEntity>();
+            this._log = logger;
+            this.collection = new MongoDbAccess(connectionStringProvider).GetCollection<TEntity>();
         }
 
         public virtual TEntity GetById(TKey id)
         {
-            return this.Collection.FindOneByIdAs<TEntity>(typeof(TEntity).IsSubclassOf(typeof(Entity)) 
+            this._log?.Debug($"MONGO :: Getting entity '{id}' of type '{nameof(TEntity)}'");
+
+            return this.collection.FindOneByIdAs<TEntity>(typeof(TEntity).IsSubclassOf(typeof(Entity)) 
                         ? new ObjectId(id as string) 
                         : BsonValue.Create(id));
         }
 
         public virtual IQueryable<TEntity> GetAll()
         {
-            return this.Collection.AsQueryable();
+            this._log?.Debug($"MONGO :: Getting all enities of type '{nameof(TEntity)}'");
+
+            return this.collection.AsQueryable();
+        }
+
+        public virtual GeoNearResult<TEntity> GeoNear(GeoNearArgs nearArgs)
+        {
+            this._log?.Debug($"MONGO :: Performing Geo distance query [{nearArgs}]");
+
+            return this.collection.GeoNear(nearArgs);
         }
 
         public virtual TEntity Add(TEntity entity)
         {
-            this.Collection.Insert<TEntity>(entity);
+            this._log?.Debug($"MONGO :: Inserting entity '{entity.Id}' of type '{nameof(entity)}'");
+
+            this.collection.Insert<TEntity>(entity);
 
             return entity;
         }
 
         public virtual void Add(IEnumerable<TEntity> entities)
         {
-            this.Collection.InsertBatch<TEntity>(entities);
+            this._log?.Debug($"MONGO :: Inserting multiple entities - '{nameof(entities)}'");
+
+            this.collection.InsertBatch<TEntity>(entities);
         }
 
         public virtual TEntity Update(TEntity entity)
         {
-            this.Collection.Save<TEntity>(entity);
+            this.collection.Save<TEntity>(entity);
 
             return entity;
         }
@@ -59,13 +82,13 @@ namespace Intro.DataAccess.Connection
         {
             foreach (var entity in entities)
             {
-                this.Collection.Save<TEntity>(entity);
+                this.collection.Save<TEntity>(entity);
             }
         }
 
         public virtual void Delete(TKey id)
         {
-            this.Collection.Remove(typeof(TEntity).IsSubclassOf(typeof(Entity))
+            this.collection.Remove(typeof(TEntity).IsSubclassOf(typeof(Entity))
                 ? Query.EQ("_id", new ObjectId(id as string))
                 : Query.EQ("_id", BsonValue.Create(id)));
         }
@@ -77,7 +100,7 @@ namespace Intro.DataAccess.Connection
 
         public virtual void Delete(Expression<Func<TEntity, bool>> predicate)
         {
-            foreach (var entity in this.Collection.AsQueryable().Where(predicate))
+            foreach (var entity in this.collection.AsQueryable().Where(predicate))
             {
                 this.Delete(entity.Id);
             }
@@ -85,45 +108,36 @@ namespace Intro.DataAccess.Connection
 
         public virtual void DeleteAll()
         {
-            this.Collection.RemoveAll();
+            this.collection.RemoveAll();
         }
 
         public virtual long Count()
         {
-            return this.Collection.Count();
+            return this.collection.Count();
         }
 
         public virtual bool Exists(Expression<Func<TEntity, bool>> predicate)
         {
-            return this.Collection.AsQueryable().Any(predicate);
+            return this.collection.AsQueryable().Any(predicate);
         }
 
         #region IQueryable<T>
         
         public virtual IEnumerator<TEntity> GetEnumerator()
         {
-            return this.Collection.AsQueryable().GetEnumerator();
+            return this.collection.AsQueryable().GetEnumerator();
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            return this.Collection.AsQueryable().GetEnumerator();
+            return this.collection.AsQueryable().GetEnumerator();
         }
 
-        public virtual Type ElementType
-        {
-            get { return this.Collection.AsQueryable().ElementType; }
-        }
+        public virtual Type ElementType => this.collection.AsQueryable().ElementType;
 
-        public virtual Expression Expression
-        {
-            get { return this.Collection.AsQueryable().Expression; }
-        }
+        public virtual Expression Expression => this.collection.AsQueryable().Expression;
 
-        public virtual IQueryProvider Provider
-        {
-            get { return this.Collection.AsQueryable().Provider; }
-        }
+        public virtual IQueryProvider Provider => this.collection.AsQueryable().Provider;
 
         #endregion
     }

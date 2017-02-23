@@ -36,7 +36,6 @@ namespace Intro.Application.Services
         public IUser Authenticate(string userName, string password)
         {
             var user = userRepository.GetByUserName(userName);
-
             if (user == null)
             {
                 return null;
@@ -64,12 +63,7 @@ namespace Intro.Application.Services
 
         private bool IsMatchingPassword(byte[] userEncryptedPassword, string password)
         {
-            if (userEncryptedPassword.SequenceEqual(password.Encrypt()))
-            {
-                return true;
-            }
-
-            return false;
+            return userEncryptedPassword.SequenceEqual(password.Encrypt());
         }
     }
 }

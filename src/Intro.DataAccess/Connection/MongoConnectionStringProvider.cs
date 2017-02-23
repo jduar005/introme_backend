@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-
-namespace Intro.DataAccess.Connection
+﻿namespace Intro.DataAccess.Connection
 {
     public interface IConnectionStringProvider
     {
@@ -13,7 +11,10 @@ namespace Intro.DataAccess.Connection
 
         public string GetConnectionString()
         {
-            return ConfigurationManager.ConnectionStrings[MongoConnectionString].ConnectionString;
+            return "mongodb://localhost:27017/Punched";
+
+            // TODO: use configuration file: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration
+            //            return ConfigurationManager.ConnectionStrings[MongoConnectionString].ConnectionString;
         }
     }
 }

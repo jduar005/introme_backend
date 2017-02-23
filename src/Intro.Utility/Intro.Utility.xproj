@@ -7,8 +7,8 @@
 
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>eb0d94be-a0c2-4e3c-bc84-e0adccb70553</ProjectGuid>
-    <RootNamespace>Gambit.IntegrationTests</RootNamespace>
+    <ProjectGuid>16e48fcc-a600-445d-a5c2-7e67022cae57</ProjectGuid>
+    <RootNamespace>Intro.Utility</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
