@@ -7,7 +7,7 @@ MAINTAINER J.P Duarte <jpjuanduarte@gmail.com>
 RUN mkdir /app
 
 # copy the dll to docker 
-COPY bin/* /app/
+COPY bin/ /app/
 
 # Environment Setup
 WORKDIR /app
@@ -20,4 +20,4 @@ EXPOSE 5000
 ENV ASPNETCORE_URLS http://*:5000
 
 # run the application
-ENTRYPOINT ["dotnet", "src.dll"]
+ENTRYPOINT ["dotnet", "Intro.Web.dll"]

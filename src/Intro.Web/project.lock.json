@@ -9074,16 +9074,17 @@
       "Intro.Application >= 1.0.0-*",
       "Intro.DataAccess >= 1.0.0-*",
       "Intro.Domain >= 1.0.0-*",
-      "Microsoft.AspNetCore.Owin >= 1.0.0",
-      "Microsoft.AspNetCore.Server.Kestrel >= 1.0.0",
-      "Microsoft.Extensions.Configuration.Binder >= 1.0.0",
-      "Microsoft.Extensions.Configuration.Json >= 1.0.0",
-      "Microsoft.NETCore.App >= 1.0.1",
       "Nancy >= 2.0.0-clinteastwood",
       "Nancy.Authentication.Stateless >= 2.0.0-clinteastwood",
       "Nancy.Bootstrappers.Autofac >= 2.0.0-clinteastwood"
     ],
-    ".NETCoreApp,Version=v1.0": []
+    ".NETCoreApp,Version=v1.0": [
+      "Microsoft.AspNetCore.Owin >= 1.0.0",
+      "Microsoft.AspNetCore.Server.Kestrel >= 1.0.0",
+      "Microsoft.Extensions.Configuration.Binder >= 1.0.0",
+      "Microsoft.Extensions.Configuration.Json >= 1.0.0",
+      "Microsoft.NETCore.App >= 1.0.1"
+    ]
   },
   "tools": {},
   "projectFileToolGroups": {}
