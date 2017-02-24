@@ -12,7 +12,7 @@ namespace Intro.IntegrationTests.DataAccess
         public void GetConnectionString_ReturnsMongoServerSettings()
         {
             var provider = new MongoConnectionStringProvider();
-            provider.GetConnectionString().Should().Be("mongodb://localhost:27017/IntroTest");
+            provider.GetConnectionString().Should().Be("mongodb://localhost:27017/Intro");
         }
     }
 }

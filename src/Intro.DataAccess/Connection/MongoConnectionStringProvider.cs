@@ -11,7 +11,7 @@
 
         public string GetConnectionString()
         {
-            return "mongodb://localhost:27017/Punched";
+            return "mongodb://localhost:27017/Intro";
 
             // TODO: use configuration file: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration
             //            return ConfigurationManager.ConnectionStrings[MongoConnectionString].ConnectionString;
