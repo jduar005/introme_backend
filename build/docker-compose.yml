@@ -23,6 +23,18 @@ services:
       - "5000:5000"
     environment:
       - SERVICE_5000_NAME= primary_webapi
+    links:
+      - database
+  database:
+    image: mongo:latest
+    ports: 
+      - "27017:27017"
+    volumes_from:
+      - mongodata
+  mongodata:
+    image: tianon/true
+    volumes:
+      - /data/db
       
   #
   # Service Discovery - Registrator

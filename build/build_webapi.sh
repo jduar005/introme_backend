@@ -1,5 +1,5 @@
 cd ../src/Intro.Web
-dotnet restore
+
 dotnet publish
 
 cd ../../build
