@@ -5,7 +5,7 @@
         "Intro.DataAccess": "1.0.0-*",
         "Intro.Domain": "1.0.0-*",
         "mongocsharpdriver": "2.4.2",
-        "NETStandard.Library": "1.6.1"
+        "NETStandard.Library": "1.6.0"
     },
 
   "frameworks": {

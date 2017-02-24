@@ -1,6 +1,7 @@
 ﻿using Intro.Application.Services;
 using Intro.DataAccess.Repository;
 using Intro.Domain.PersistentModels;
+using Intro.Domain.PersistentModels.Old;
 using Intro.Utility.DotNetWrappers;
 using NSubstitute;
 using NUnit.Framework;
