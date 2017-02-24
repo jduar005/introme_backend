@@ -2,13 +2,14 @@
   "version": "1.0.0-*",
 
     "dependencies": {
+        "FluentAssertions": "4.19.0",
         "Intro.Application": "1.0.0-*",
         "Intro.DataAccess": "1.0.0-*",
         "Intro.Domain": "1.0.0-*",
         "Intro.Utility": "1.0.0-*",
         "NETStandard.Library": "1.6.0",
         "NSubstitute": "2.0.1-rc",
-        "NUnit": "3.5.0"
+        "NUnit": "3.6.0"
     },
 
   "frameworks": {
