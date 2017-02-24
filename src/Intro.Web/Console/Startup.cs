@@ -16,6 +16,8 @@ namespace NancyApplication
                               .AddJsonFile("appsettings.json")
                               .SetBasePath(env.ContentRootPath);
 
+
+            // TODO pass configuration into bootstrapper binding
             config = builder.Build();
         }
 

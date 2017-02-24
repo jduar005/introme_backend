@@ -3,7 +3,6 @@ using System.Text;
 
 namespace Intro.Utility.Extensions
 {
-    // tODO move these outside of dataaccess project (Intro.Core?)
     public static class StringExtensions
     {
         public static byte[] Encrypt(this string password)
