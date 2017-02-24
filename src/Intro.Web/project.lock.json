@@ -3,6 +3,9 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.0": {
+      "AsyncUsageAnalyzers/1.0.0-alpha003": {
+        "type": "package"
+      },
       "Autofac/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -402,6 +405,19 @@
           "lib/netstandard1.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
         }
       },
+      "Microsoft.Extensions.Configuration.Binder/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "1.0.0",
+          "System.ComponentModel.TypeConverter": "4.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration.EnvironmentVariables/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -412,6 +428,37 @@
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.Extensions.Configuration.EnvironmentVariables.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.FileExtensions/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "1.0.0",
+          "Microsoft.Extensions.FileProviders.Physical": "1.0.0",
+          "System.AppContext": "4.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.Extensions.Configuration.FileExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.Extensions.Configuration.FileExtensions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Json/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "1.0.0",
+          "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Dynamic.Runtime": "4.0.11",
+          "System.IO.FileSystem": "4.0.1",
+          "System.Runtime.Serialization.Primitives": "4.1.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.Extensions.Configuration.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.Extensions.Configuration.Json.dll": {}
         }
       },
       "Microsoft.Extensions.DependencyInjection/1.0.0": {
@@ -633,7 +680,7 @@
           "lib/netstandard1.1/Microsoft.Net.Http.Headers.dll": {}
         }
       },
-      "Microsoft.NETCore.App/1.0.0": {
+      "Microsoft.NETCore.App/1.0.1": {
         "type": "package",
         "dependencies": {
           "Libuv": "1.9.0",
@@ -641,7 +688,7 @@
           "Microsoft.CodeAnalysis.CSharp": "1.3.0",
           "Microsoft.CodeAnalysis.VisualBasic": "1.3.0",
           "Microsoft.NETCore.DotNetHostPolicy": "1.0.1",
-          "Microsoft.NETCore.Runtime.CoreCLR": "1.0.2",
+          "Microsoft.NETCore.Runtime.CoreCLR": "1.0.4",
           "Microsoft.VisualBasic": "10.0.1",
           "NETStandard.Library": "1.6.0",
           "System.Buffers": "4.0.0",
@@ -700,7 +747,7 @@
           "Microsoft.NETCore.DotNetHost": "1.0.1"
         }
       },
-      "Microsoft.NETCore.Jit/1.0.2": {
+      "Microsoft.NETCore.Jit/1.0.4": {
         "type": "package"
       },
       "Microsoft.NETCore.Platforms/1.1.0": {
@@ -712,10 +759,10 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
+      "Microsoft.NETCore.Runtime.CoreCLR/1.0.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Jit": "1.0.2",
+          "Microsoft.NETCore.Jit": "1.0.4",
           "Microsoft.NETCore.Windows.ApiSets": "1.0.1"
         }
       },
@@ -859,7 +906,7 @@
           "lib/netstandard1.5/MongoDB.Driver.Core.dll": {}
         }
       },
-      "Nancy/2.0.0-barneyrubble": {
+      "Nancy/2.0.0-clinteastwood": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.0.1",
@@ -894,6 +941,32 @@
         },
         "runtime": {
           "lib/netstandard1.6/Nancy.dll": {}
+        }
+      },
+      "Nancy.Authentication.Stateless/2.0.0-clinteastwood": {
+        "type": "package",
+        "dependencies": {
+          "AsyncUsageAnalyzers": "1.0.0-alpha003",
+          "Nancy": "2.0.0-clinteastwood"
+        },
+        "compile": {
+          "lib/netstandard1.6/Nancy.Authentication.Stateless.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Nancy.Authentication.Stateless.dll": {}
+        }
+      },
+      "Nancy.Bootstrappers.Autofac/2.0.0-clinteastwood": {
+        "type": "package",
+        "dependencies": {
+          "Autofac": "4.0.0-rc3-316",
+          "Nancy": "2.0.0-clinteastwood"
+        },
+        "compile": {
+          "lib/netstandard1.6/Nancy.Bootstrappers.Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Nancy.Bootstrappers.Autofac.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -3148,6 +3221,18 @@
     }
   },
   "libraries": {
+    "AsyncUsageAnalyzers/1.0.0-alpha003": {
+      "sha512": "rj0BLCPLI0QF6/fDswekUtavjj2g6uA4vsASOZ0g6N/w77XQTQgzSqhiJ/6Py6R5HhdpQ3HfkjUpR+KSvWq3nQ==",
+      "type": "package",
+      "path": "AsyncUsageAnalyzers/1.0.0-alpha003",
+      "files": [
+        "AsyncUsageAnalyzers.1.0.0-alpha003.nupkg.sha512",
+        "AsyncUsageAnalyzers.nuspec",
+        "analyzers/dotnet/AsyncUsageAnalyzers.dll",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
     "Autofac/4.3.0": {
       "sha512": "fCrt0EBW99+q1R6iA3+JBYmtfCDYfMHzsAtaDZ8/kbq9tW+Ze5W8SrxwTHqpbPI4Cp4/0NeJDaODD+D3cOfdHQ==",
       "type": "package",
@@ -3463,6 +3548,17 @@
         "lib/netstandard1.0/Microsoft.Extensions.Configuration.Abstractions.xml"
       ]
     },
+    "Microsoft.Extensions.Configuration.Binder/1.0.0": {
+      "sha512": "kK8QuBcPQtmKJCkC9enc1uMRFa++mPTuVNm2K5jDVXcAYKRBcFSbdEBvIe1JIgA6dEsAQeqjfHfKSaUJ8f5NFQ==",
+      "type": "package",
+      "path": "Microsoft.Extensions.Configuration.Binder/1.0.0",
+      "files": [
+        "Microsoft.Extensions.Configuration.Binder.1.0.0.nupkg.sha512",
+        "Microsoft.Extensions.Configuration.Binder.nuspec",
+        "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.xml"
+      ]
+    },
     "Microsoft.Extensions.Configuration.EnvironmentVariables/1.0.0": {
       "sha512": "A0yqS98VtPNlFkFI7YBlwkAekUHE/9mMeNc+K4RmgTjCrskuk6pX3LGhDU7aD5CPYc9Px7M2To/2u4xDSnRikg==",
       "type": "package",
@@ -3474,6 +3570,32 @@
         "lib/net451/Microsoft.Extensions.Configuration.EnvironmentVariables.xml",
         "lib/netstandard1.3/Microsoft.Extensions.Configuration.EnvironmentVariables.dll",
         "lib/netstandard1.3/Microsoft.Extensions.Configuration.EnvironmentVariables.xml"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.FileExtensions/1.0.0": {
+      "sha512": "MO7XtmLiqnpgVTX34uzFPvIS7jPmBUGLN0MP5MsYu6CqYTIs90ULjtrV5TegH5mTqKTXWjZRGXL26R6apTyc4w==",
+      "type": "package",
+      "path": "Microsoft.Extensions.Configuration.FileExtensions/1.0.0",
+      "files": [
+        "Microsoft.Extensions.Configuration.FileExtensions.1.0.0.nupkg.sha512",
+        "Microsoft.Extensions.Configuration.FileExtensions.nuspec",
+        "lib/net451/Microsoft.Extensions.Configuration.FileExtensions.dll",
+        "lib/net451/Microsoft.Extensions.Configuration.FileExtensions.xml",
+        "lib/netstandard1.3/Microsoft.Extensions.Configuration.FileExtensions.dll",
+        "lib/netstandard1.3/Microsoft.Extensions.Configuration.FileExtensions.xml"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Json/1.0.0": {
+      "sha512": "KRyEOe5/Xi3qyDMdEVh++e2pQRsI6C3wzINVExOcu9lOsFmXK/k4qOf244fyo59rnn6s5xKnIW3WbhxWS1hu2w==",
+      "type": "package",
+      "path": "Microsoft.Extensions.Configuration.Json/1.0.0",
+      "files": [
+        "Microsoft.Extensions.Configuration.Json.1.0.0.nupkg.sha512",
+        "Microsoft.Extensions.Configuration.Json.nuspec",
+        "lib/net451/Microsoft.Extensions.Configuration.Json.dll",
+        "lib/net451/Microsoft.Extensions.Configuration.Json.xml",
+        "lib/netstandard1.3/Microsoft.Extensions.Configuration.Json.dll",
+        "lib/netstandard1.3/Microsoft.Extensions.Configuration.Json.xml"
       ]
     },
     "Microsoft.Extensions.DependencyInjection/1.0.0": {
@@ -3627,12 +3749,12 @@
         "lib/netstandard1.1/Microsoft.Net.Http.Headers.xml"
       ]
     },
-    "Microsoft.NETCore.App/1.0.0": {
-      "sha512": "Bv40dLDrT+Igcg1e6otW3D8voeJCfcAxOlsxSVlDz+J+cdWls5kblZvPHHvx7gX3/oJoQVIkEeO3sMyv5PSVJA==",
+    "Microsoft.NETCore.App/1.0.1": {
+      "sha512": "tLwokN5e6NI2JuQ6XdsdRoEtJI5PaUMPqMYY+SvD4ZXxDx/Tznl5AIz+dNEVxegXd9+eSju3GVo022ZxfVkVqw==",
       "type": "package",
-      "path": "Microsoft.NETCore.App/1.0.0",
+      "path": "Microsoft.NETCore.App/1.0.1",
       "files": [
-        "Microsoft.NETCore.App.1.0.0.nupkg.sha512",
+        "Microsoft.NETCore.App.1.0.1.nupkg.sha512",
         "Microsoft.NETCore.App.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -3675,12 +3797,12 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.Jit/1.0.2": {
-      "sha512": "Ok2vWofa6X8WD9vc4pfLHwvJz1/B6t3gOAoZcjrjrQf7lQOlNIuZIZtLn3wnWX28DuQGpPJkRlBxFj7Z5txNqw==",
+    "Microsoft.NETCore.Jit/1.0.4": {
+      "sha512": "1MGEEEADA3HBkFWAVrpXcwmVST/oEzHyHJo0lGA+MnEU3DmB+PPCctHIYACXqM3Qh/q4C0TJ8bxm8sa92VdwZg==",
       "type": "package",
-      "path": "Microsoft.NETCore.Jit/1.0.2",
+      "path": "Microsoft.NETCore.Jit/1.0.4",
       "files": [
-        "Microsoft.NETCore.Jit.1.0.2.nupkg.sha512",
+        "Microsoft.NETCore.Jit.1.0.4.nupkg.sha512",
         "Microsoft.NETCore.Jit.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -3700,12 +3822,12 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
-      "sha512": "A0x1xtTjYJWZr2DRzgfCOXgB0JkQg8twnmtTJ79wFje+IihlLbXtx6Z2AxyVokBM5ruwTedR6YdCmHk39QJdtQ==",
+    "Microsoft.NETCore.Runtime.CoreCLR/1.0.4": {
+      "sha512": "UkRpZkM3DlSyvUD/NLYbpqrMcKPsqaWqS0ZksUEyBH8xhvMCQh/sQ6kHa2tsXPcICwyMZqSKwtifXFnkSIekBQ==",
       "type": "package",
-      "path": "Microsoft.NETCore.Runtime.CoreCLR/1.0.2",
+      "path": "Microsoft.NETCore.Runtime.CoreCLR/1.0.4",
       "files": [
-        "Microsoft.NETCore.Runtime.CoreCLR.1.0.2.nupkg.sha512",
+        "Microsoft.NETCore.Runtime.CoreCLR.1.0.4.nupkg.sha512",
         "Microsoft.NETCore.Runtime.CoreCLR.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -3900,17 +4022,41 @@
         "lib/netstandard1.5/MongoDB.Driver.Core.xml"
       ]
     },
-    "Nancy/2.0.0-barneyrubble": {
-      "sha512": "ffOBZdJd+uiI1J+tOGdjL6+YUyque8OrX4CeXT8DHJQORlPNOFww1KskXtaW20OGefaSXf1LGh07XDGQyH4iQQ==",
+    "Nancy/2.0.0-clinteastwood": {
+      "sha512": "Xhwdj/k7xMjjlkznN3EMLzvugrtTKpDfsxi2Ud7UR5OMM8ScSrwySoAFgGifomAllfkfeY4j7cMq7ZhIgjDPUQ==",
       "type": "package",
-      "path": "Nancy/2.0.0-barneyrubble",
+      "path": "Nancy/2.0.0-clinteastwood",
       "files": [
-        "Nancy.2.0.0-barneyrubble.nupkg.sha512",
+        "Nancy.2.0.0-clinteastwood.nupkg.sha512",
         "Nancy.nuspec",
         "lib/net452/Nancy.dll",
         "lib/net452/Nancy.xml",
         "lib/netstandard1.6/Nancy.dll",
         "lib/netstandard1.6/Nancy.xml"
+      ]
+    },
+    "Nancy.Authentication.Stateless/2.0.0-clinteastwood": {
+      "sha512": "GWctOpX5xYqTt0C7g5H43n/927230Lph4EWGRaBWYUskYzIsDJdz+yQCnwnTIo1lqFrZ7PH/tnQ/eZUlBNcL6w==",
+      "type": "package",
+      "path": "Nancy.Authentication.Stateless/2.0.0-clinteastwood",
+      "files": [
+        "Nancy.Authentication.Stateless.2.0.0-clinteastwood.nupkg.sha512",
+        "Nancy.Authentication.Stateless.nuspec",
+        "lib/net452/Nancy.Authentication.Stateless.dll",
+        "lib/net452/Nancy.Authentication.Stateless.xml",
+        "lib/netstandard1.6/Nancy.Authentication.Stateless.dll",
+        "lib/netstandard1.6/Nancy.Authentication.Stateless.xml"
+      ]
+    },
+    "Nancy.Bootstrappers.Autofac/2.0.0-clinteastwood": {
+      "sha512": "MPl9uGrgIzMfnHSwp5/9P52mYbMhgMM0Rk+sF+gTtySoNN7k+Rz2dnFlXKfJA5mJmavhBrh4vwmc33Ctun0OfA==",
+      "type": "package",
+      "path": "Nancy.Bootstrappers.Autofac/2.0.0-clinteastwood",
+      "files": [
+        "Nancy.Bootstrappers.Autofac.2.0.0-clinteastwood.nupkg.sha512",
+        "Nancy.Bootstrappers.Autofac.nuspec",
+        "lib/net452/Nancy.Bootstrappers.Autofac.dll",
+        "lib/netstandard1.6/Nancy.Bootstrappers.Autofac.dll"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -8930,8 +9076,12 @@
       "Intro.Domain >= 1.0.0-*",
       "Microsoft.AspNetCore.Owin >= 1.0.0",
       "Microsoft.AspNetCore.Server.Kestrel >= 1.0.0",
-      "Microsoft.NETCore.App >= 1.0.0",
-      "Nancy >= 2.0.0-barneyrubble"
+      "Microsoft.Extensions.Configuration.Binder >= 1.0.0",
+      "Microsoft.Extensions.Configuration.Json >= 1.0.0",
+      "Microsoft.NETCore.App >= 1.0.1",
+      "Nancy >= 2.0.0-clinteastwood",
+      "Nancy.Authentication.Stateless >= 2.0.0-clinteastwood",
+      "Nancy.Bootstrappers.Autofac >= 2.0.0-clinteastwood"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

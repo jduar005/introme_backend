@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using Intro.DataAccess.Repository;
 using Intro.Domain.PersistentModels;
 using MongoDB.Bson;
@@ -35,8 +36,8 @@ namespace Intro.DataAccess.Connection
         public virtual TEntity GetById(TKey id)
         {
             this._log?.Debug($"MONGO :: Getting entity '{id}' of type '{nameof(TEntity)}'");
-
-            return this.collection.FindOneByIdAs<TEntity>(typeof(TEntity).IsSubclassOf(typeof(Entity)) 
+            
+            return this.collection.FindOneByIdAs<TEntity>(typeof(TEntity).GetTypeInfo().IsSubclassOf(typeof(Entity)) 
                         ? new ObjectId(id as string) 
                         : BsonValue.Create(id));
         }
@@ -88,7 +89,7 @@ namespace Intro.DataAccess.Connection
 
         public virtual void Delete(TKey id)
         {
-            this.collection.Remove(typeof(TEntity).IsSubclassOf(typeof(Entity))
+            this.collection.Remove(typeof(TEntity).GetTypeInfo().IsSubclassOf(typeof(Entity))
                 ? Query.EQ("_id", new ObjectId(id as string))
                 : Query.EQ("_id", BsonValue.Create(id)));
         }

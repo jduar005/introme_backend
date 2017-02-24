@@ -3,8 +3,7 @@ using Nancy.Security;
 
 namespace Intro.Security
 {
-//    public interface IUserIdentityAdaptor : IUserIdentity
-    public interface IUserIdentityAdaptor
+    public interface IUserIdentityAdaptor : IUserIdentity
     {
         void SetUserName(string userName);
 

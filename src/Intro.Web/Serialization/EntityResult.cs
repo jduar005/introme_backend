@@ -8,8 +8,7 @@ using Nancy;
 
 using Intro.Application.Validation;
 using Intro.Domain.PersistentModels;
-
-using ServiceStack;
+using Nancy.Extensions;
 
 namespace Intro.Web.Serialization
 {

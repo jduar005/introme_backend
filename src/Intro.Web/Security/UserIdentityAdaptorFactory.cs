@@ -4,7 +4,6 @@ using Nancy.Security;
 
 namespace Intro.Security
 {
-    // TODO G unit test
     public class UserIdentityAdaptorFactory : IUserIdentityAdaptorFactory
     {
         private readonly Func<IUserIdentityAdaptor> _userIdentityFactory;
@@ -17,7 +16,7 @@ namespace Intro.Security
         public IUserIdentity FromUser(IUser user)
         {
             var userIdentity = _userIdentityFactory();
-            userIdentity.SetUserName(user.UserName);
+            userIdentity.SetUserName(user.EmailAddress);
             userIdentity.SetClaims(new[] { user.Id });
 
             return userIdentity;

@@ -1,20 +1,26 @@
-﻿{
+{
   "version": "1.0.0-*",
   "buildOptions": {
-    "debugType": "portable"
+    "debugType": "portable",
+    "emitEntryPoint": true
   },
-  "dependencies": {
-    "Microsoft.NETCore.App": {
-      "version": "1.0.0",
-      "type": "platform"
+    "dependencies": {
+        "Nancy": "2.0.0-clinteastwood",
+        "Autofac": "4.3.0",
+        "Intro.Domain": "1.0.0-*",
+        "Intro.Application": "1.0.0-*",
+        "Intro.DataAccess": "1.0.0-*",
+        "Nancy.Authentication.Stateless": "2.0.0-clinteastwood",
+        "Nancy.Bootstrappers.Autofac": "2.0.0-clinteastwood",
+        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+        "Microsoft.NETCore.App": {
+            "type": "platform",
+            "version": "1.0.1"
+        },
+        "Microsoft.AspNetCore.Owin": "1.0.0",
+        "Microsoft.Extensions.Configuration.Json": "1.0.0",
+        "Microsoft.Extensions.Configuration.Binder": "1.0.0"
     },
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
-    "Microsoft.AspNetCore.Owin": "1.0.0",
-    "Nancy": "2.0.0-barneyrubble",
-    "Autofac": "4.3.0",
-    "Intro.Domain": "1.0.0-*",
-    "Intro.Application": "1.0.0-*",
-    "Intro.DataAccess": "1.0.0-*" },
   "commands": {
     "web": "Microsoft.AspNet.Server.Kestrel"
   },
